@@ -21,7 +21,19 @@ function main(currentTime) {
     gameEngine();
 }
 
-function isCollide(snakeArr) {
+function isCollide(snake) {
+    // If you bump into yourself
+    for (let i = 1; i < headArr.length; i++) {
+        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+            return true;
+        }
+    }
+
+    // If you bump into the wall
+    if(snake[0].x >= 18 || snake[0].x <= 0 && snake[0].y >= 18 || snake[0].y <= 0) {
+        return true;
+    }
+
     return false;
 }
 
@@ -40,10 +52,10 @@ function gameEngine() {
     // If you have eaten the food, increament the score and regenerate the food
     if(headArr[0].y === foodObj.y && headArr[0].x === foodObj.x) {
         foodMusic.play();
-        headArr.unshift({ x: headArr[0].x + foodObj.x, y: headArr[0].y + foodObj.y });
+        headArr.unshift({ x: headArr[0].x + headVelocity.x, y: headArr[0].y + headVelocity.y });
         let a = 2;
         let b = 16;
-        foodObj = { x: Math.round(a + (b - a) * Math.random()), y: Math.round(a + (b - a) * Math.random()) }
+        foodObj = {x: Math.round(a + (b-a)* Math.random()), y: Math.round(a + (b-a)* Math.random())}
     }
 
     // Moving the snake
