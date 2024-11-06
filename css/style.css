@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background: url("../img/bg.jpg") no-repeat;
+    background-size: 100vw 100vh;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub-container{
+    background: linear-gradient(#e1d5d56e, #0000004f);
+    width: 90vmin;
+    height: 90vmin;
+    border: 2px solid #000;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+}
+.head{
+    background: Red;
+}
+.tall{
+    background: black;
+}
+.food{
+    background: yellow;
+}
