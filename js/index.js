@@ -145,3 +145,29 @@ window.addEventListener('keydown', e => {
             break;
     }
 });
+
+
+// Handle touch controls for mobile
+document.getElementById('up').addEventListener('click', () => {
+    headVelocity = { x: 0, y: -1 };
+    startMusic.play();
+    moveMusic.play();
+});
+
+document.getElementById('down').addEventListener('click', () => {
+    headVelocity = { x: 0, y: 1 };
+    startMusic.play();
+    moveMusic.play();
+});
+
+document.getElementById('left').addEventListener('click', () => {
+    headVelocity = { x: -1, y: 0 };
+    startMusic.play();
+    moveMusic.play();
+});
+
+document.getElementById('right').addEventListener('click', () => {
+    headVelocity = { x: 1, y: 0 };
+    startMusic.play();
+    moveMusic.play();
+});
