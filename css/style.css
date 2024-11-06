@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 #scoreBox{
     position: absolute;
@@ -58,10 +59,10 @@
 
 .controls {
     position: fixed;
-    bottom: 10%;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    display: grid;
+    display: none;
     grid-template-areas:
         ". up ."
         "left down right";
@@ -78,3 +79,13 @@
 #down { grid-area: down; }
 #left { grid-area: left; }
 #right { grid-area: right; }
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .controls { 
+        display: grid;
+    }
+    #scoreBox,
+    #hiScoreBox {
+        right: unset;
+    }
+}
