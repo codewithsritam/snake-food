@@ -51,6 +51,13 @@ function gameEngine() {
     // If you have eaten the food, increament the score and regenerate the food
     if(headArr[0].y === foodObj.y && headArr[0].x === foodObj.x) {
         foodMusic.play();
+        score += 1;
+        if (score > hiscoreVal) {
+            hiscoreVal = score;
+            localStorage.setItem('hiscore', JSON.stringify(hiscoreVal));
+            hiScoreBox.innerHTML = "HiScore : " + hiscoreVal;
+        }
+        scoreBox.innerHTML = "Score: " + score;
         headArr.unshift({ x: headArr[0].x + headVelocity.x, y: headArr[0].y + headVelocity.y });
         let a = 2;
         let b = 16;
@@ -88,6 +95,18 @@ function gameEngine() {
     foodElement.classList.add('food');
     Board.appendChild(foodElement);
 }
+
+// Hi score value
+const hiScore = localStorage.getItem('hiscore');
+if(hiScore === null) {
+    hiscoreVal = 0;
+    localStorage.setItem('hiscore', JSON.stringify(hiscoreVal));
+}
+else {
+    hiscoreVal = JSON.parse(hiScore);
+    hiScoreBox.innerHTML = "HiScore : " + hiScore;
+}
+
 
 // Starts
 window.requestAnimationFrame(main);
