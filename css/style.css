@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
 #scoreBox{
     position: absolute;
@@ -41,20 +42,20 @@
     grid-template-rows: repeat(18, 1fr);
 }
 .head{
-    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
-    border: 2px solid rgb(34, 4, 34); 
-    transform: scale(1.02);
-    border-radius: 9px;
+    background-color: rgb(160, 196, 50);
+    border: .25vmin solid #281111;
+    border-radius: 10px;
+    margin-left: 2px;
 }
 .tall{
-    background-color: purple;
-    border: .25vmin solid white;
-    border-radius: 12px;
+    background: linear-gradient(rgb(160 196 50 / 49%), rgb(117 221 55 / 49%));
+    border: .25vmin solid #281111;
+    border-radius: 10px;
+    margin: 1px;
 }
 .food{
-    background: linear-gradient(red, purple);
-    border: .25vmin solid black;
-    border-radius: 8px;
+    background: url("../img/frog-1.png") no-repeat;
+    background-size: 100%;
 }
 
 .controls {
