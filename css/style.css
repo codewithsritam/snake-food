@@ -57,7 +57,10 @@
     background: url("../img/frog-1.png") no-repeat;
     background-size: 100%;
 }
-
+.food-prince{
+    background: url("../img/frog-prince.png") no-repeat;
+    background-size: 100%;
+}
 .controls {
     position: fixed;
     bottom: 30px;
