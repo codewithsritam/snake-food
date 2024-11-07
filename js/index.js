@@ -122,47 +122,72 @@ if (hiScore === null) {
 // Starts
 window.requestAnimationFrame(main);
 
-// Key down
-window.addEventListener('keydown', e => {
+// Keydown event listener for arrow keys
+window.addEventListener('keydown', (e) => {
     startMusic.play();
     moveMusic.play();
+
+    // Check current movement direction and prevent opposite direction input
     switch (e.key) {
         case 'ArrowUp':
-            headVelocity = { x: 0, y: -1 };
+            if (headVelocity.y !== 1) { // Prevent moving down if moving up or currently moving horizontally
+                headVelocity = { x: 0, y: -1 };
+            }
             break;
+
         case 'ArrowDown':
-            headVelocity = { x: 0, y: 1 };
+            if (headVelocity.y !== -1) { // Prevent moving up if moving down or currently moving horizontally
+                headVelocity = { x: 0, y: 1 };
+            }
             break;
+
         case 'ArrowLeft':
-            headVelocity = { x: -1, y: 0 };
+            if (headVelocity.x !== 1) { // Prevent moving right if moving left or currently moving vertically
+                headVelocity = { x: -1, y: 0 };
+            }
             break;
+
         case 'ArrowRight':
-            headVelocity = { x: 1, y: 0 };
+            if (headVelocity.x !== -1) { // Prevent moving left if moving right or currently moving vertically
+                headVelocity = { x: 1, y: 0 };
+            }
+            break;
+
+        default:
             break;
     }
 });
 
+
 // Handle touch controls for mobile
 document.getElementById('up').addEventListener('click', () => {
-    headVelocity = { x: 0, y: -1 };
+    if(headVelocity.y !== 1) {
+        headVelocity = { x: 0, y: -1 };
+    }
     startMusic.play();
     moveMusic.play();
 });
 
 document.getElementById('down').addEventListener('click', () => {
-    headVelocity = { x: 0, y: 1 };
+    if(headVelocity.y !== -1) {
+        headVelocity = { x: 0, y: 1 };
+    }
     startMusic.play();
     moveMusic.play();
 });
 
 document.getElementById('left').addEventListener('click', () => {
-    headVelocity = { x: -1, y: 0 };
+    if(headVelocity.x !== 1){
+        headVelocity = { x: -1, y: 0 };
+    }
     startMusic.play();
     moveMusic.play();
 });
 
 document.getElementById('right').addEventListener('click', () => {
-    headVelocity = { x: 1, y: 0 };
+    if(headVelocity.x !== -1){
+        headVelocity = { x: 1, y: 0 };
+    }
     startMusic.play();
     moveMusic.play();
 });
