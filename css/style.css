@@ -8,14 +8,14 @@
 }
 
 body {
-    width: 30rem;
-    margin: auto;
     height: 100vh;
     overflow: hidden;
     position: relative;
 }
 
 nav {
+    width: 92vmin;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +28,7 @@ nav a img {
 
 nav h1 {
     font-family: "Roboto", serif;
+    font-size: 25px;
 }
 
 .container {
@@ -55,22 +56,26 @@ nav h1 {
 #hiScoreBox {
     position: absolute;
     top: 59px;
-    right: 140px;
+    right: 125px;
     font-size: 39px;
     font-weight: bold;
     font-family: 'New Tegomin', serif;
 }
 
 .sub-container {
-    /* background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167)); */
+    /* background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 90vmin;
+    height: 90vmin; */
     background: linear-gradient(#1e1e1e, rgb(39 39 39));
     width: 90vmin;
-    height: 90vmin;
+    height: 75vmin;
     border: 2px solid #000;
     border-radius: 6px;
     display: grid;
     grid-template-columns: repeat(18, 1fr);
     grid-template-rows: repeat(18, 1fr);
+    box-shadow: 5px 6px 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 .head {
@@ -134,7 +139,19 @@ nav h1 {
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
     nav {
+        width: 100%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 2px;
+    }
+    nav h1 {
+        font-size: 20px;
+    }
+    .container {
+        padding: 1rem;
+    }
+    .sub-container {
+        height: 95vmin;
+        position: absolute;
+        top: 160px;
     }
     .controls {
         display: grid;
