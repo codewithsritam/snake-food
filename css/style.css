@@ -1,12 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.container{
-    background: url("../img/bg.jpg") no-repeat;
-    background-size: 100vw 100vh;
+
+body {
+    width: 30rem;
+    margin: auto;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+nav a img {
+    width: 50px;
+}
+
+nav h1 {
+    font-family: "Roboto", serif;
+}
+
+.container {
+    /* background: url("../img/bg.jpg") no-repeat;
+    background-size: 100vw 100vh; */
+    background: transparent;
     min-height: 100vh;
     height: 100vh;
     display: flex;
@@ -15,7 +42,8 @@
     position: relative;
     overflow: hidden;
 }
-#scoreBox{
+
+#scoreBox {
     position: absolute;
     top: 9px;
     right: 200px;
@@ -23,7 +51,8 @@
     font-weight: bold;
     font-family: 'New Tegomin', serif;
 }
-#hiScoreBox{
+
+#hiScoreBox {
     position: absolute;
     top: 59px;
     right: 140px;
@@ -31,8 +60,10 @@
     font-weight: bold;
     font-family: 'New Tegomin', serif;
 }
-.sub-container{
-    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+
+.sub-container {
+    /* background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167)); */
+    background: linear-gradient(#1e1e1e, rgb(39 39 39));
     width: 90vmin;
     height: 90vmin;
     border: 2px solid #000;
@@ -41,26 +72,31 @@
     grid-template-columns: repeat(18, 1fr);
     grid-template-rows: repeat(18, 1fr);
 }
-.head{
+
+.head {
     background-color: rgb(160, 196, 50);
     border: .25vmin solid #281111;
     border-radius: 10px;
     margin-left: 2px;
 }
-.tall{
+
+.tall {
     background: linear-gradient(rgb(160 196 50 / 49%), rgb(117 221 55 / 49%));
     border: .25vmin solid #281111;
     border-radius: 10px;
     margin: 1px;
 }
-.food{
+
+.food {
     background: url("../img/frog-1.png") no-repeat;
     background-size: 100%;
 }
-.food-prince{
+
+.food-prince {
     background: url("../img/frog-prince.png") no-repeat;
     background-size: 100%;
 }
+
 .controls {
     position: fixed;
     bottom: 30px;
@@ -79,15 +115,31 @@
     font-size: 24px;
     text-align: center;
 }
-#up { grid-area: up; }
-#down { grid-area: down; }
-#left { grid-area: left; }
-#right { grid-area: right; }
+
+#up {
+    grid-area: up;
+}
+
+#down {
+    grid-area: down;
+}
+
+#left {
+    grid-area: left;
+}
+
+#right {
+    grid-area: right;
+}
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
-    .controls { 
+    nav {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 2px;
+    }
+    .controls {
         display: grid;
     }
+
     #scoreBox,
     #hiScoreBox {
         right: unset;
