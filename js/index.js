@@ -13,6 +13,8 @@ let headArr = [{ x: 12, y: 14 }];
 let foodObj = { x: 4, y: 5 };
 let isFoodPrince = false; // Flag to indicate if current food is a "food-prince"
 let foodPrinceInterval = 5;
+const gameOver = document.querySelector('.gameOver');
+const Reset = document.getElementById('Reset');
 
 // Main
 function main(currentTime) {
@@ -41,13 +43,18 @@ function toogleFoodPrince() {
     isFoodPrince = foodEatenCount % foodPrinceInterval === 0;
 }
 
+// Reset all 
+Reset.addEventListener('click', () => {
+    gameOver.style.transform = 'translate(-100%)';
+});
+
 function gameEngine() {
     if (isCollide(headArr)) {
         gameoverMusic.play();
         startMusic.pause();
         headVelocity = { x: 0, y: 0 };
         isFoodPrince = false;
-        alert('Game over. Press any key to play again!');
+        gameOver.style.transform = 'unset';
         headArr = [{ x: 3, y: 5 }];
         score = 0;
         foodEatenCount = 0; // Reset counter

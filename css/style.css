@@ -133,7 +133,31 @@ nav h1 {
 #right {
     grid-area: right;
 }
-
+.gameOver {
+    width: 100vw;
+    height: 100vh;
+    background-color: #3f3d3d7c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-100%);
+    transition: all 1s ease-in-out;
+}
+.gameOver h2, p, button {
+    font-family: 'New Tegomin', serif;
+    color: #000;
+    z-index: 1;
+}
+.gameOver button {
+    padding: 10px 20px;
+    background-color: rgb(160, 196, 50);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
 @media only screen and (min-width: 321px) and (max-width: 768px) {
     body {
         background-size: cover;
