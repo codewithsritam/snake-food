@@ -109,6 +109,7 @@ nav h1 {
         ". up ."
         "left down right";
     gap: 10px;
+    z-index: -1;
 }
 
 .control-btn {
@@ -143,6 +144,7 @@ nav h1 {
     justify-content: center;
     transform: translate(-100%);
     transition: all 1s ease-in-out;
+    z-index: 1;
 }
 .gameOver h2, p, button {
     font-family: 'New Tegomin', serif;
