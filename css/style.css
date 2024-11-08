@@ -11,6 +11,8 @@ body {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    background: url("../img/bg.jpg") no-repeat;
+    background-size: 100vw 100vh;
 }
 
 nav {
@@ -32,21 +34,18 @@ nav h1 {
 }
 
 .container {
-    /* background: url("../img/bg.jpg") no-repeat;
-    background-size: 100vw 100vh; */
-    background: transparent;
-    min-height: 100vh;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #scoreBox {
     position: absolute;
-    top: 9px;
+    top:50px;
     right: 200px;
     font-size: 39px;
     font-weight: bold;
@@ -55,7 +54,7 @@ nav h1 {
 
 #hiScoreBox {
     position: absolute;
-    top: 59px;
+    top: 95px;
     right: 125px;
     font-size: 39px;
     font-weight: bold;
@@ -63,9 +62,6 @@ nav h1 {
 }
 
 .sub-container {
-    /* background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
-    width: 90vmin;
-    height: 90vmin; */
     background: linear-gradient(#1e1e1e, rgb(39 39 39));
     width: 90vmin;
     height: 75vmin;
@@ -98,8 +94,9 @@ nav h1 {
 }
 
 .food-prince {
-    background: url("../img/frog-prince.png") no-repeat;
+    background: url("../img/bunny.png") no-repeat;
     background-size: 100%;
+    filter: brightness(0) saturate(100%) invert(88%) sepia(27%) saturate(4503%) hue-rotate(25deg) brightness(94%) contrast(104%);
 }
 
 .controls {
@@ -138,6 +135,9 @@ nav h1 {
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
     nav {
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 2px;
@@ -145,20 +145,12 @@ nav h1 {
     nav h1 {
         font-size: 20px;
     }
-    .container {
-        padding: 1rem;
-    }
-    .sub-container {
-        height: 95vmin;
-        position: absolute;
-        top: 160px;
-    }
     .controls {
         display: grid;
     }
-
     #scoreBox,
     #hiScoreBox {
-        right: unset;
+        position: unset;
+        text-align: center;
     }
 }
