@@ -46,6 +46,7 @@ function toogleFoodPrince() {
 // Reset all 
 Reset.addEventListener('click', () => {
     gameOver.style.transform = 'translate(-100%)';
+    scoreBox.innerHTML = "Score: " + 0;
 });
 
 function gameEngine() {
@@ -64,12 +65,12 @@ function gameEngine() {
     // Check if snake has eaten the current food
     if (headArr[0].y === foodObj.y && headArr[0].x === foodObj.x) {
         foodMusic.play();
-        score += isFoodPrince ? 2 : 1;
+        score += isFoodPrince ? 3 : 1;
         foodEatenCount++;
         toogleFoodPrince();
 
         if(isFoodPrince){
-            speed += 0.5; // Increase speed slightly for each "food-prince"
+            speed += 1; // Increase speed slightly for each "food-prince"
         }
 
         if (score > hiscoreVal) {
